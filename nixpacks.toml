@@ -1,0 +1,13 @@
+[phases.setup]
+aptPkgs = ["tesseract-ocr", "tesseract-ocr-eng"]
+
+[phases.build]
+cmds = [
+    "mvn clean package -DskipTests",
+    "which tesseract",
+    "tesseract --version",
+    "find /usr/share -name eng.traineddata"
+]
+
+[start]
+cmd = "java -jar target/invoice-intelligence-0.0.1-SNAPSHOT.jar"
