@@ -1,0 +1,14 @@
+target/
+*.log
+*.tmp
+!.mvn/wrapper/maven-wrapper.jar
+
+# IntelliJ
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+.env

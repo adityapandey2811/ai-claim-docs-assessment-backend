@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+
+app:
+  gemini:
+    api-key: ${apiKey}
+    model: gemini-3.5-flash-lite
+    endpoint: ${aiEndpoint}
+    request-timeout-seconds: 60
+  tesseract:
+    data-path: ${dataPath}
+  allowed-origins: ${origins}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
