@@ -1,6 +1,6 @@
 package com.example.invoiceintelligence.service;
 
-import com.example.invoiceintelligence.client.GeminiClient;
+import com.example.invoiceintelligence.ai.DocumentClassifierAssistant;
 import com.example.invoiceintelligence.model.DocumentClassification;
 import com.example.invoiceintelligence.model.UploadedDocument;
 import org.slf4j.Logger;
@@ -14,17 +14,18 @@ import java.util.stream.Collectors;
 public class DocumentClassifierService {
 
     private static final Logger log = LoggerFactory.getLogger(DocumentClassifierService.class);
-    private final GeminiClient geminiClient;
+    private final DocumentClassifierAssistant documentClassifierAssistant;
 
-    public DocumentClassifierService(GeminiClient geminiClient) {
-        this.geminiClient = geminiClient;
+    public DocumentClassifierService(DocumentClassifierAssistant documentClassifierAssistant) {
+        this.documentClassifierAssistant = documentClassifierAssistant;
     }
 
     public DocumentClassification classify(UploadedDocument document) {
         log.info("Classifying document {} ({})", document.getId(), document.getFileName());
-        DocumentClassification classification = geminiClient.classifyDocument(document.getExtractedText());
+        DocumentClassification classification = documentClassifierAssistant.classify(document.getExtractedText());
         classification.setDocumentId(document.getId());
-        log.info("Document {} classified as {} with confidence {}", document.getId(), classification.getDocumentType(), classification.getConfidence());
+        log.info("Document {} classified as {} with confidence {}",
+                document.getId(), classification.getDocumentType(), classification.getConfidence());
         return classification;
     }
 

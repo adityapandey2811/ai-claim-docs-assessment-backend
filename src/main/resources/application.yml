@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: ${PORT:8080}
 
 spring:
   main:
@@ -7,13 +7,14 @@ spring:
 
 app:
   gemini:
-    api-key: ${apiKey}
+    api-key: ${APP_GEMINI_API_KEY:}
     model: gemini-3.5-flash-lite
-    endpoint: ${aiEndpoint}
-    request-timeout-seconds: 60
+    model-name: gemini-3.5-flash-lite
+    endpoint: ${APP_GEMINI_ENDPOINT:https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent}
+    request-timeout-seconds: ${APP_GEMINI_REQUEST_TIMEOUT_SECONDS:60}
   tesseract:
-    data-path: ${dataPath}
-  allowed-origins: ${origins}
+    data-path: ${APP_TESSERACT_DATA_PATH:}
+  allowed-origins: ${APP_ALLOWED_ORIGINS:http://localhost:3000,http://localhost:5173}
 
 management:
   endpoints:
