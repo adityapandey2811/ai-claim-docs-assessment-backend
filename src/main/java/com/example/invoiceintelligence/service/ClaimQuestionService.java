@@ -21,7 +21,7 @@ public class ClaimQuestionService {
         log.info("Answering question for claim {}", claimSubmission.getId());
 
         String claimSummary = buildClaimSummary(claimSubmission);
-        String answer = claimQuestionAssistant.answer(claimSummary, question);
+        String answer = claimQuestionAssistant.answer(claimSubmission.getId(), claimSummary, question);
 
         log.info("Claim question answered for claim {}", claimSubmission.getId());
         return answer;

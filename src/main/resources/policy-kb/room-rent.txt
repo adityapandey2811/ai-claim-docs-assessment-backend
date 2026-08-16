@@ -1,0 +1,31 @@
+SURYODAYA HEALTH SHIELD POLICY — ROOM RENT AND ASSOCIATED SUB-LIMITS
+
+2.1 Room Rent Cap: Room, boarding, and nursing expenses are payable up to a
+maximum of the daily room rent limit specified in the policy schedule for the
+insured's chosen plan tier:
+    - Silver Plan: Rs. 4,000 per day
+    - Gold Plan: Rs. 7,000 per day
+    - Platinum Plan: No sub-limit (room rent payable as actually incurred,
+      up to a single private room)
+
+2.2 Proportionate Deduction Clause: If the insured is admitted to a room whose
+rent exceeds the applicable daily limit under their plan tier, ALL associated
+hospitalization expenses (excluding pharmacy and diagnostics, which are
+reimbursed in full subject to overall sum insured) — including doctor's fees,
+nursing charges, and other room-linked charges — shall be reduced in the same
+proportion as the actual room rent charged bears to the entitled room rent
+limit. This is a standard proportionate deduction clause common to Indian
+health insurance products.
+
+Example: If a Silver Plan holder (Rs. 4,000/day limit) is admitted to a room
+costing Rs. 8,000/day, the proportion is 4,000/8,000 = 50%. All eligible
+room-linked charges are reimbursed at 50% of the actual billed amount.
+
+2.3 ICU Charges: Intensive Care Unit charges are payable in full without
+application of the room rent proportionate deduction clause, subject to the
+overall sum insured limit.
+
+2.4 Co-Payment: A mandatory co-payment of 10% applies to all claims for
+insured persons aged 61 years and above at the time of hospitalization. This
+means the insured bears 10% of the eligible claim amount, and the insurer
+pays the remaining 90%, subject to the sum insured limit.

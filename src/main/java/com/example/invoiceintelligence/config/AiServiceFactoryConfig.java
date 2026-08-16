@@ -5,7 +5,9 @@ import com.example.invoiceintelligence.ai.CrossCheckAssistant;
 import com.example.invoiceintelligence.ai.DocumentClassifierAssistant;
 import com.example.invoiceintelligence.ai.DocumentValidatorAssistant;
 import com.example.invoiceintelligence.ai.RecommendationAssistant;
+import dev.langchain4j.memory.chat.MessageWindowChatMemory;
 import dev.langchain4j.model.chat.ChatLanguageModel;
+import dev.langchain4j.rag.content.retriever.ContentRetriever;
 import dev.langchain4j.service.AiServices;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -49,9 +51,11 @@ public class AiServiceFactoryConfig {
     }
 
     @Bean
-    public ClaimQuestionAssistant claimQuestionAssistant(ChatLanguageModel geminiChatModel) {
+    public ClaimQuestionAssistant claimQuestionAssistant(ChatLanguageModel geminiChatModel, ContentRetriever policyRetriever) {
         return AiServices.builder(ClaimQuestionAssistant.class)
                 .chatLanguageModel(geminiChatModel)
+                .chatMemoryProvider(memoryId -> MessageWindowChatMemory.withMaxMessages(10))
+                .contentRetriever(policyRetriever)
                 .build();
     }
 }

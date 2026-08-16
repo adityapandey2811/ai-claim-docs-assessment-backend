@@ -1,6 +1,7 @@
 package com.example.invoiceintelligence;
 
 import com.example.invoiceintelligence.config.AppConfig;
+import org.jspecify.annotations.NonNull;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -18,7 +19,7 @@ public class InvoiceApplication {
     public WebMvcConfigurer corsConfigurer(AppConfig appConfig) {
         return new WebMvcConfigurer() {
             @Override
-            public void addCorsMappings(CorsRegistry registry) {
+            public void addCorsMappings(@NonNull CorsRegistry registry) {
                 registry.addMapping("/api/**")
                         .allowedOrigins(appConfig.getAllowedOrigins())
                         .allowedMethods("GET", "POST", "OPTIONS")
