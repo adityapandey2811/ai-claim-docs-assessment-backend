@@ -16,6 +16,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 ENV dataPath=/usr/share/tesseract-ocr/5/tessdata
+ENV JAVA_TOOL_OPTIONS="-Xms512m -Xmx2g"
 
 EXPOSE 8080
 
